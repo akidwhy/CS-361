@@ -1,0 +1,27 @@
+0. I typed chmod +x 0 and then ./0 and this gave me the secret.
+1. a) I typed chmod +x 1
+   b) I typed ltrace ./1
+   c) Then I converted the hex number to decimal that was given under rand
+   d) Then I finally entered that decimal number and hit enter which gave me the secret
+2. a) I typed chmod +x 2
+   b) Then ltrace ./2
+   c) the call to curl_easy_perform equals to 0
+   d) therefore, the answer is yes.
+3. a) chmod +x 3
+   b) ltrace ./3 but this did not give me anything
+   c) strace ./3; this gave me an error saying that there is no such file or directory named      iamspecial
+   d) so I created a file called iamspecial and placed it into the same directory as the 3 exe.
+   e) I ran strace again and this said that permission is now denied
+   f) I changed the permissions of the iamspecial file so that permission can be granted
+   g) now after running strace I got the secret.
+4. a) Type chmod +x 4
+   b) Type strace ./4 and this said that there is no such file or directory as lib361.so
+   c) So, then I created 2 c files, one header file, and one makefile. Similar to lab 3.
+   d) I ran the command setenv LD_LIBRARY_PATH <my directory path>
+   e) then I ran ./4 and it gave me an error saying that there is an undefined symbol: secretoperation
+   f) I changed the name of my function to secretoperation and ran ./4 again 
+   g) this gave me an error. it showed that the function took in 2 ints, 3 and 6.
+   h) I changed the function to an int and the function parameter are two ints
+   i) I ran ltrace again and assertion failed, and it said that result == 10
+   j) So, in my function secretoperation i created an int called result. then made result equal 1 + x + y. x is 3 and y is 6. then the function returned result.
+   k) then I ran ltrace and it gave me the secret
